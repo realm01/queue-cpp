@@ -21,9 +21,23 @@ Queue<T>::Queue(void) {
 }
 
 template <typename T>
+Queue<T>::~Queue(void) {
+  if(first != NULL)
+    delete first;
+  if(last != NULL)
+    delete last;
+}
+
+template <typename T>
 Queue<T>::Queue::Node::Node(const T& item) {
   this->item = item;
   next = NULL;
+}
+
+template <typename T>
+Queue<T>::Queue::Node::~Node(void) {
+  if(next != NULL)
+    delete next;
 }
 
 template <typename T>

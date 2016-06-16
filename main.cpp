@@ -32,5 +32,7 @@ int main() {
   cout << "empty: " << myqueue->isEmpty() << endl;
   cout << "size: " << myqueue->size() << endl;
 
+  // delete myqueue;
+
   return 0;
 }

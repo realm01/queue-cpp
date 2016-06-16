@@ -30,6 +30,7 @@ class Queue {
         Node* next;
       public:
         Node(const T& item);
+        ~Node(void);
     };
     Node* first;
     Node* last;
@@ -37,6 +38,7 @@ class Queue {
 
   public:
     Queue(void);
+    ~Queue(void);
     void addLast(const T& item);
     T deleteFirst(void);
     T getFirst(void);
