@@ -17,7 +17,12 @@ int main() {
   cout << "empty: " << myqueue->isEmpty() << endl;
   cout << "size: " << myqueue->size() << endl;
 
-  // delete myqueue;
+  myqueue->addLast(2);
+  myqueue->addLast(4);
+  myqueue->addLast(2);
+  myqueue->addLast(4);
+
+  delete myqueue;
 
   return 0;
 }

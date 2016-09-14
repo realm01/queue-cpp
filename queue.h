@@ -30,7 +30,6 @@ class Queue {
         Node* next;
       public:
         Node(const T& item);
-        ~Node(void);
     };
     Node* first;
     Node* last;

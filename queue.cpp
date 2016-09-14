@@ -7,22 +7,20 @@ Queue<T>::Queue(void) {
 
 template <typename T>
 Queue<T>::~Queue(void) {
-  if(first != NULL)
-    delete first;
-  if(last != NULL)
-    delete last;
+  Node* curr_node = first;
+  Node* next_node = first;
+
+  while(next_node != NULL) {
+    next_node = curr_node->next;
+    delete curr_node;
+    curr_node = next_node;
+  }
 }
 
 template <typename T>
 Queue<T>::Queue::Node::Node(const T& item) {
   this->item = item;
   next = NULL;
-}
-
-template <typename T>
-Queue<T>::Queue::Node::~Node(void) {
-  if(next != NULL)
-    delete next;
 }
 
 template <typename T>
@@ -40,9 +38,11 @@ void Queue<T>::addLast(const T& item) {
 
 template <typename T>
 T Queue<T>::deleteFirst(void) {
+
   T tmp = first->item;
-  first = first->next;
-  size_int--;
+  Node* next = first->next;
+  delete first;
+  first = next;
 
   return tmp;
 }
