@@ -1,0 +1,3 @@
+# this project is too simple to use autotools
+# but I also want a simple travis config, which requires autotools
+# so this is a compromise
